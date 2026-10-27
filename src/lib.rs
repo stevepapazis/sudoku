@@ -82,6 +82,10 @@ impl Sudoku {
         Self { grid: [EMPTY_CELL; CELL_COUNT] }
     }
 
+    pub fn as_grid(&self) -> &[u8; CELL_COUNT] {
+        &self.grid
+    }
+
     pub fn try_from_grid(grid: [u8; CELL_COUNT]) -> Result<Self, SudokuError> {
         let sudoku = Self { grid };
 
